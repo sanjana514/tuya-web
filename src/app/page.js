@@ -68,7 +68,7 @@ function App() {
               {new Date(data.time).toLocaleTimeString()}
             </div>
           </div>
-          <div className="bg-green-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
+          <div className="bg-green-100 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
             <div className="text-sm font-medium text-gray-500 mb-1">Current</div>
             <div className="font-semibold">{data.current} mA</div>
           </div>
