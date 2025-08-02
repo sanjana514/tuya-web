@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-green-50">
       <div className="container mx-auto p-6 space-y-6">
         <App />
         <div className="flex justify-end">
@@ -26,27 +26,27 @@ function App() {
     const ws = new WebSocket("wss://toda-backend-tr28.onrender.com");
 
     ws.onopen = () => {
-      console.log("✅ WebSocket connected");
+      console.log(" WebSocket connected");
     };
 
     ws.onmessage = (event) => {
       try {
         const newData = JSON.parse(event.data);
-        console.log("📡 Data received:", newData);
+        console.log(" Data received:", newData);
         setData(newData);
         setBlink(true);
         setTimeout(() => setBlink(false), 150);
       } catch (err) {
-        console.error("❌ Error parsing message", err);
+        console.error(" Error parsing message", err);
       }
     };
 
     ws.onerror = (err) => {
-      console.error("❌ WebSocket error", err);
+      console.error(" WebSocket error", err);
     };
 
     ws.onclose = () => {
-      console.warn("⚠️ WebSocket closed");
+      console.warn(" WebSocket closed");
     };
 
     return () => ws.close();
@@ -58,25 +58,25 @@ function App() {
 
   return (
     <div className="font-sans p-6">
-      <h1 className="text-3xl font-bold mb-6"> Live Tuya Device Monitor</h1>
+      <h1 className="text-3xl font-bold mb-6">Supti's Energy Monitoring Chart</h1>
 
       {data ? (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-xl">
-          <div className="bg-white p-4 rounded-lg shadow-sm border">
-            <div className="text-sm font-medium text-gray-500 mb-1">Time</div>
+          <div className="bg-green-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
+            <div className="text-sm font-medium text-gray-600 mb-1">Time</div>
             <div className={`font-semibold ${blinkClass}`}>
               {new Date(data.time).toLocaleTimeString()}
             </div>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border">
+          <div className="bg-green-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
             <div className="text-sm font-medium text-gray-500 mb-1">Current</div>
             <div className="font-semibold">{data.current} mA</div>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border">
+          <div className="bg-green-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
             <div className="text-sm font-medium text-gray-500 mb-1">Voltage</div>
             <div className="font-semibold">{data.voltage} V</div>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border">
+          <div className="bg-green-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
             <div className="text-sm font-medium text-gray-500 mb-1">Power</div>
             <div className="font-semibold">{data.power} W</div>
           </div>

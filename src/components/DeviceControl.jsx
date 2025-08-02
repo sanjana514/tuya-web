@@ -76,19 +76,19 @@ export function DeviceControl() {
   };
 
   return (
-    <Card className="w-64">
+    <Card className="w-74 bg-green-50 hover:bg-green-100">
       <CardHeader className="pb-3">
-        <CardTitle className="text-base font-semibold">
+        <CardTitle className="text-base font-semibold text-gray-800">
           Device Control
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-1">
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-sm font-medium text-gray-800">
               Power Switch
             </span>
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-gray-800">
               {initialLoading
                 ? "Loading..."
                 : switchState

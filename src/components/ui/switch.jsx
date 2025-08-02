@@ -21,7 +21,7 @@ const Switch = React.forwardRef(
         >
           <span
             className={cn(
-              "pointer-events-none block h-8 w-8 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-8 data-[state=unchecked]:translate-x-0",
+              "pointer-events-none block h-8 w-8 rounded-full bg-green-200 shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-8 data-[state=unchecked]:translate-x-0",
               checked ? "translate-x-8" : "translate-x-0"
             )}
             data-state={checked ? "checked" : "unchecked"}
