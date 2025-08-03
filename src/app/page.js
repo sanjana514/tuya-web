@@ -58,25 +58,25 @@ function App() {
 
   return (
     <div className="font-sans p-6">
-      <h1 className="text-3xl font-bold mb-6">Supti's Energy Monitoring Chart</h1>
+      <h1 className="text-3xl font-bold mb-6">Supti&apos;s Energy Monitoring Chart</h1>
 
       {data ? (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-xl">
-          <div className="bg-green-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
+          <div className="bg-pink-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
             <div className="text-sm font-medium text-gray-600 mb-1">Time</div>
             <div className={`font-semibold ${blinkClass}`}>
               {new Date(data.time).toLocaleTimeString()}
             </div>
           </div>
-          <div className="bg-green-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
+          <div className="bg-gray-100 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
             <div className="text-sm font-medium text-gray-500 mb-1">Current</div>
             <div className="font-semibold">{data.current} mA</div>
           </div>
-          <div className="bg-green-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
+          <div className="bg-yellow-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
             <div className="text-sm font-medium text-gray-500 mb-1">Voltage</div>
             <div className="font-semibold">{data.voltage} V</div>
           </div>
-          <div className="bg-green-50 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
+          <div className="bg-blue-100 hover:bg-green-100 p-4 rounded-lg shadow-sm border">
             <div className="text-sm font-medium text-gray-500 mb-1">Power</div>
             <div className="font-semibold">{data.power} W</div>
           </div>
